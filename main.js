@@ -78,7 +78,7 @@ function bookTicket() {
     const message = "You have selected " + firstClassCount + " FIRST CLASS and " + economyClassCount + " ECONOMY CLASS ticket. Your total cost will be $" + totalCost + " (including VAT). Click 'ok' to book the ticket."
     const warningHeading = document.querySelector(".book-warning");
     if (totalCost == 0) {
-        warningDisplay.innerText = "You have not selected any ticket . Plaease select at least one ticket.";
+        warningDisplay.innerText = "You have not selected any ticket . Please select at least one ticket.";
         bookAlertBtn.addEventListener("click", removeAlertBox);
     }
     else {
