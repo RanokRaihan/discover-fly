@@ -21,6 +21,7 @@ function productChange(isIncrease, ticketClass) {
         if (ticketCount > 0) {
             TicketNewCount = ticketCount - 1;
         }
+        //this is for animating warning box
         else {
             negativAlertWrapper.classList.add('wrapper-animator');
             negetiveAlert.classList.add('alert-box-animator');
@@ -52,7 +53,7 @@ function totalTicketCost() {
     //calculating subTotal, vat and grandTotal
 
     const subTotal = firstClassCount * firstClassTicket + economyClassCount * economyClassTicket;
-    const vat = subTotal / 10;
+    const vat = subTotal / 10; //for 10% vat
     const grandTotal = subTotal + vat;
 
     //assign the values     
@@ -60,18 +61,6 @@ function totalTicketCost() {
     vatDisplay.innerText = '$' + vat;
     grandTotalDisplay.innerText = '$' + grandTotal;
     totalCost = grandTotal;
-
-}
-
-//alert box button 
-function removeAlertBox(event) {
-    event.target.parentNode.parentNode.classList.remove('wrapper-animator');
-    event.target.parentNode.classList.remove('alert-box-animator');
-    setTimeout(function () {
-        //this code will exicute after animation
-        document.querySelector(".book-warning").classList.remove("text-green");
-        document.querySelector(".book-warning").innerText = "Warning";
-    }, 300);
 
 }
 
@@ -103,11 +92,26 @@ function bookTicket() {
         });
     }
 }
-
 //book button
 document.querySelector("#book-button").addEventListener("click", bookTicket);
 
+//remove alert box
+function removeAlertBox(event) {
+    event.target.parentNode.parentNode.classList.remove('wrapper-animator');
+    event.target.parentNode.classList.remove('alert-box-animator');
+    setTimeout(function () {
+        //this code will exicute after animation
+        document.querySelector(".book-warning").classList.remove("text-green");
+        document.querySelector(".book-warning").innerText = "Warning";
+    }, 300);
+
+}
 
 //remove alert box listener
 
-document.querySelector(".alert-box-btn").addEventListener("click", removeAlertBox)
+document.querySelector(".alert-box-btn").addEventListener("click", removeAlertBox);
+
+
+
+
+
