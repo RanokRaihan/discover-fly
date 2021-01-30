@@ -11,6 +11,10 @@
         rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 </head>
 
 <body>
@@ -41,7 +45,7 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                        <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
@@ -49,22 +53,32 @@
                 </div>
             </div>
             <div class="input-group f-class">
-                <div>
+                <div class="f-class-input-box">
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input class="inp-style inp-width" type="number" id="firstClassInp" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <button onclick="productChange(true, 'firstClass')" class="btn-plus">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button onclick="productChange(false, 'firstClass')" class="btn-minus">
+                        <i class="fas fa-minus"></i>
+                    </button>
                 </div>
             </div>
-            
+
             <div class="input-group f-class">
-                <div>
+                <div class="f-class-input-box">
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input class="inp-style inp-width" type="number" id="economyClassInp" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <button onclick="productChange(true, 'economyClass')" class="btn-plus">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button onclick="productChange(false, 'economyClass')" class="btn-minus">
+                        <i class="fas fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="calculations">
@@ -73,7 +87,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p id="sub-total">$00</p>
                     </div>
                 </div>
 
@@ -82,7 +96,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -91,20 +105,41 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="grand-total">$00</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-button" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+                voluptatibus quam</p>
+        </div>
+        </section>
+    </main>
+    <section class="negative-alert-wrapper alert-box-wrapper dark-bg">
+        <div class="alert-negetive alert-box">
+            <h1 class="warning">Warning</h1>
+            <p class="warning-text">You can not buy negetive number of Ticket</p>
+            <button class="alert-box-btn">ok</button>
+        </div>
+    </section>
+    <section class="book-alert-wrapper alert-box-wrapper dark-bg">
+        <div class="booking-alert alert-box">
+            <h1 class="warning book-warning">Warning</h1>
+            <p id="booking-warning-text" class="warning-text "> </p>
+            <button class="book-alert-btn alert-box-btn">ok</button>
+
         </div>
     </section>
 
+
     <!--Thank You-->
+
+    <script src="main.js"></script>
 </body>
 
 </html>
