@@ -58,10 +58,10 @@
                     <input class="inp-style inp-width" type="number" id="firstClassInp" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button onclick="productChange(true, 'firstClass')" class="btn-plus">
+                    <button onclick="ticketCountChange(true, 'firstClass')" class="btn-plus">
                         <i class="fas fa-plus"></i>
                     </button>
-                    <button onclick="productChange(false, 'firstClass')" class="btn-minus">
+                    <button onclick="ticketCountChange(false, 'firstClass')" class="btn-minus">
                         <i class="fas fa-minus"></i>
                     </button>
                 </div>
@@ -73,10 +73,10 @@
                     <input class="inp-style inp-width" type="number" id="economyClassInp" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button onclick="productChange(true, 'economyClass')" class="btn-plus">
+                    <button onclick="ticketCountChange(true, 'economyClass')" class="btn-plus">
                         <i class="fas fa-plus"></i>
                     </button>
-                    <button onclick="productChange(false, 'economyClass')" class="btn-minus">
+                    <button onclick="ticketCountChange(false, 'economyClass')" class="btn-minus">
                         <i class="fas fa-minus"></i>
                     </button>
                 </div>
@@ -127,14 +127,14 @@
     <section class="negative-alert-wrapper alert-box-wrapper dark-bg">
         <div class="alert-negetive alert-box">
             <h1 class="warning">Warning</h1>
-            <p class="warning-text">You can not buy negative number of Ticket.</p>
+            <p class="warning-text">Ticket number can not be negative.</p>
             <button class="alert-box-btn">ok</button>
         </div>
     </section>
     <section class="book-alert-wrapper alert-box-wrapper dark-bg">
         <div class="booking-alert alert-box">
             <h1 class="warning book-warning">Warning</h1>
-            <p id="booking-warning-text" class="warning-text "> </p>
+            <p id="booking-warning-text" class="warning-text"> </p>
             <button class="book-alert-btn alert-box-btn">ok</button>
 
         </div>

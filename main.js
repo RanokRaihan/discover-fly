@@ -7,8 +7,8 @@ const negetiveAlert = document.querySelector(".alert-negetive");
 const bookingAlert = document.querySelector(".booking-alert");
 let totalCost = 0;
 
-//declaring productChange function to increase or decrase the ticket count
-function productChange(isIncrease, ticketClass) {
+//declaring ticketCountChange function to increase or decrase the ticket count
+function ticketCountChange(isIncrease, ticketClass) {
     let TicketInput = document.getElementById(ticketClass + "Inp");
     let ticketCount = parseInt(TicketInput.value);
     let TicketNewCount = ticketCount;
@@ -75,10 +75,10 @@ function bookTicket() {
     const economyClassCount = document.getElementById('economyClassInp').value;
     const warningDisplay = document.querySelector("#booking-warning-text");
     const bookAlertBtn = document.querySelector(".book-alert-btn");
-    const message = "You have selected " + firstClassCount + " FIRST CLASS and " + economyClassCount + " ECONOMY CLASS ticket. Your total cost will be $" + totalCost + " (including VAT). click 'ok' to book the ticket."
+    const message = "You have selected " + firstClassCount + " FIRST CLASS and " + economyClassCount + " ECONOMY CLASS ticket. Your total cost will be $" + totalCost + " (including VAT). Click 'ok' to book the ticket."
     const warningHeading = document.querySelector(".book-warning");
     if (totalCost == 0) {
-        warningDisplay.innerText = "You have not selected any Ticket .plaease select at least one ticket";
+        warningDisplay.innerText = "You have not selected any ticket . Plaease select at least one ticket.";
         bookAlertBtn.addEventListener("click", removeAlertBox);
     }
     else {
